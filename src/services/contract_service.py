@@ -85,20 +85,10 @@ class ContractService:
                 f"Length mismatch between calls ({len(calls)}) and callbacks ({len(callbacks)})."
             )
 
-        calls_copy: List[Call] = [call if isinstance(call, Call) else Call(**call) for call in calls]
-        for call in calls_copy:
-            if call.contract_address not in self.contract_cache:
-                if call.contract_abi is None:
-                    raise Exception(
-                        f"Contract {call['contract_address']} is never called. Use add_contract() to add the contract or specify the ABI to the Call object."
-                    )
-                self.add_contract(
-                    address = call.contract_address,
-                    abi = call.contract_abi
-                )
+        calls: List[Call] = self.__prepare_calls(calls = calls)
 
         multicall_result: List[MulticallReturnData] = self.__multicall(
-            calls = calls_copy,
+            calls = calls,
             require_success = require_success,
             block_identifier = block_identifier
         )
@@ -119,6 +109,21 @@ class ContractService:
             block_identifier = block_identifier
         )
     
+
+    def __prepare_calls(self, calls: List[Union[Call, Dict[str, Any]]]) -> List[Call]:
+        calls: List[Call] = [call if isinstance(call, Call) else Call(**call) for call in calls]
+        for call in calls:
+            if call.contract_address not in self.contract_cache:
+                if call.contract_abi is None:
+                    raise Exception(
+                        f"Contract {call['contract_address']} is never called. Use add_contract() to add the contract or specify the ABI to the Call object."
+                    )
+                self.add_contract(
+                    address = call.contract_address,
+                    abi = call.contract_abi
+                )
+        return calls
+
 
     def __multicall(
         self, calls: List[Call], require_success: bool = True,
