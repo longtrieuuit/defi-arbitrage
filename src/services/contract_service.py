@@ -103,6 +103,59 @@ class ContractService:
         ))
     
 
+    def batch_call(
+        self, calls: List[Union[Call, Dict[str, Any]]],
+        require_success: bool = True, block_identifier: BlockIdentifier = "latest",
+        callbacks: Optional[List[Callable[[MulticallReturnData], Any]]] = None
+    ) -> List[Any]:
+        if callbacks is not None:
+            assert len(calls) == len(callbacks), (
+                f"Length mismatch between calls ({len(calls)}) and callbacks ({len(callbacks)})."
+            )
+
+        calls: List[Call] = self.__prepare_calls(calls = calls)
+
+        results: List[Any] = []
+        for call in calls:
+            try:
+                call_return_data: Any = self.get_contract(
+                    address = call.contract_address,
+                    abi = call.contract_abi
+                ).get_function_by_name(
+                    call.function_name
+                )(
+                    *call.args
+                ).call(
+                    block_identifier = block_identifier
+                )
+
+                results.append(
+                    MulticallReturnData(
+                        success = True,
+                        return_data = (call_return_data, ) if len(call.output_types) == 1 else call_return_data
+                    )
+                )
+            except Exception as e:
+                if require_success:
+                    raise e
+                
+                results.append(
+                    MulticallReturnData(
+                        success = False,
+                        return_data = None
+                    )
+                )
+
+        if callbacks is None:
+            return results
+
+        return list(map(
+            lambda x: x[0](x[1]), zip(
+                callbacks, results
+            )
+        ))
+
+
     def estimate_gas(self, transaction: TxParams, block_identifier: BlockIdentifier = "latest") -> Wei:
         return self.w3.eth.estimate_gas(
             transaction = transaction,
