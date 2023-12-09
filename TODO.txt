@@ -1,0 +1,32 @@
+Push to github
+
+Search algorithm for optimal input amount
+- Optimizations:
+    - estimate lower bound of expousre as  basefeepergas * mean gas * eth price / expected_return_pre_cost
+    - to check if arb can be profitable. check if it is profitable for exposure * cost / return_precost
+    - run search algorithm for multiple possible arbitrages simultaneously (in parallel)
+
+How can we advantage from private orderflow
+
+Compare to forex
+
+Derivative pricing
+
+cross-exchange arbitrage
+- see correlation with in-exchange arbitrage
+- use 1inch as proxy
+- uniswapv2
+
+gas optimization
+
+TODAY:
+- Change all to be based on eth
+
+Test on bananacat https://etherscan.io/tx/0x066fa69bffb4bcc02e2c100ddc19f44334f12ea1964cf4b7ff32c25a052c1324
+
+
+ExchangeRateGraph:
+    - token_in ---[pools(exchange_rate)]---> token_out
+    - return Call instead of callable
+    - returns callback + Call
+    - multicall accepts list of callbacks
