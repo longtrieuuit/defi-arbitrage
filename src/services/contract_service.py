@@ -5,7 +5,7 @@ from web3 import Web3
 from web3.contract import Contract
 from web3.types import TxParams, Wei
 from eth_typing.evm import ChecksumAddress, BlockIdentifier, BlockNumber
-from eth_abi import decode_abi
+from eth_abi import decode
 
 from typing import Dict, Any, List, Tuple, Iterable, Optional, Union, Callable
 from dataclasses import dataclass
@@ -200,7 +200,7 @@ class ContractService:
         return [
             MulticallReturnData(
                 success = encoded_result[0],
-                return_data = decode_abi(call.output_types, encoded_result[1])
+                return_data = decode(call.output_types, encoded_result[1])
                     if encoded_result[0] else None
             )
             for call, encoded_result in zip(calls, encoded_results)
