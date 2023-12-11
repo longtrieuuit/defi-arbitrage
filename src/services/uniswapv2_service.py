@@ -5,7 +5,7 @@ from .thegraph_service import TheGraphService
 from ..utils.abi import get_abi
 
 from web3 import Web3
-from web3.contract import Contract, ContractFunction
+from web3.contract.contract import Contract, ContractFunction
 from web3.types import TxParams
 from eth_account.account import Account
 from eth_account.signers.local import LocalAccount
