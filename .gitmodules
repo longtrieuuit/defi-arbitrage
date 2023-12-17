@@ -1,0 +1,3 @@
+[submodule "src/brownie-mainnet-fork"]
+	path = src/brownie-mainnet-fork
+	url = https://github.com/timotius-jason/brownie-mainnet-fork.git
