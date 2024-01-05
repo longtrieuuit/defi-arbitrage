@@ -141,6 +141,10 @@ class Path(List[Hop]):
             )
     
     def append(self, __object: Hop):
+        assert (
+            self.__len__() == 0
+            or self.__getitem__(-1).exchange_edge.token_out == __object.exchange_edge.token_in
+        ), f"New hop's input token (given {__object.exchange_edge.token_in}) must be the same as the last hop's output token ({self.__getitem__(-1).exchange_edge.token_out})."
         super().append(__object)
         self.tokens_involved.append(
             __object.exchange_edge.token_in
