@@ -7,6 +7,7 @@ from web3.types import TxParams, Wei
 from eth_typing.evm import ChecksumAddress, BlockIdentifier, BlockNumber
 from eth_abi import decode
 
+from multiprocessing.pool import ThreadPool
 from typing import Dict, Any, List, Tuple, Iterable, Optional, Union, Callable
 from dataclasses import dataclass
 
@@ -20,7 +21,7 @@ class Call:
 
 
 @dataclass
-class MulticallReturnData:
+class MulticallReturnData: # TODO rename this
     success: bool
     return_data: Optional[Iterable[Any]] = None
 
@@ -103,7 +104,7 @@ class ContractService:
         ))
     
 
-    def batch_call(
+    def batch_call_simple(
         self, calls: List[Union[Call, Dict[str, Any]]],
         require_success: bool = True, block_identifier: BlockIdentifier = "latest",
         callbacks: Optional[List[Callable[[MulticallReturnData], Any]]] = None
@@ -115,36 +116,11 @@ class ContractService:
 
         calls: List[Call] = self.__prepare_calls(calls = calls)
 
-        results: List[Any] = []
-        for call in calls:
-            try:
-                call_return_data: Any = self.get_contract(
-                    address = call.contract_address,
-                    abi = call.contract_abi
-                ).get_function_by_name(
-                    call.function_name
-                )(
-                    *call.args
-                ).call(
-                    block_identifier = block_identifier
-                )
-
-                results.append(
-                    MulticallReturnData(
-                        success = True,
-                        return_data = (call_return_data, ) if len(call.output_types) == 1 else call_return_data
-                    )
-                )
-            except Exception as e:
-                if require_success:
-                    raise e
-                
-                results.append(
-                    MulticallReturnData(
-                        success = False,
-                        return_data = None
-                    )
-                )
+        results: List[MulticallReturnData] = self.__batch_call_simple(
+            calls = calls,
+            require_success = require_success,
+            block_identifier = block_identifier
+        )
 
         if callbacks is None:
             return results
@@ -154,7 +130,35 @@ class ContractService:
                 callbacks, results
             )
         ))
+    
+    
+    def batch_call_multithreading(
+        self, calls: List[Union[Call, Dict[str, Any]]],
+        require_success: bool = True, block_identifier: BlockIdentifier = "latest",
+        callbacks: Optional[List[Callable[[MulticallReturnData], Any]]] = None
+    ) -> List[Any]:
+        if callbacks is not None:
+            assert len(calls) == len(callbacks), (
+                f"Length mismatch between calls ({len(calls)}) and callbacks ({len(callbacks)})."
+            )
 
+        calls: List[Call] = self.__prepare_calls(calls = calls)
+
+        results: List[MulticallReturnData] = self.__batch_call_multithreading(
+            calls = calls,
+            require_success = require_success,
+            block_identifier = block_identifier
+        )
+
+        if callbacks is None:
+            return results
+
+        return list(map(
+            lambda x: x[0](x[1]), zip(
+                callbacks, results
+            )
+        ))
+        
 
     def estimate_gas(self, transaction: TxParams, block_identifier: BlockIdentifier = "latest") -> Wei:
         return self.w3.eth.estimate_gas(
@@ -169,13 +173,74 @@ class ContractService:
             if call.contract_address not in self.contract_cache:
                 if call.contract_abi is None:
                     raise Exception(
-                        f"Contract {call['contract_address']} is never called. Use add_contract() to add the contract or specify the ABI to the Call object."
+                        f"Contract {call.contract_address} is never called. Use add_contract() to add the contract or specify the ABI to the Call object."
                     )
                 self.add_contract(
                     address = call.contract_address,
                     abi = call.contract_abi
                 )
         return calls
+    
+
+    def __batch_call_simple(
+        self, calls: List[Call], require_success: bool = True,
+        block_identifier: BlockIdentifier = "latest"
+    ) -> List[MulticallReturnData]:
+        return [
+            self.__try_call_helper(
+                call = call,
+                require_success = require_success,
+                block_identifier = block_identifier
+            )
+            for call in calls
+        ]
+
+
+    def __batch_call_multithreading(
+        self, calls: List[Call], require_success: bool = True,
+        block_identifier: BlockIdentifier = "latest"
+    ) -> List[MulticallReturnData]:
+        results: List[MulticallReturnData] = []
+        with ThreadPool() as pool:
+            results = pool.map(
+                func = lambda call: self.__try_call_helper(
+                    call = call,
+                    require_success = require_success,
+                    block_identifier = block_identifier
+                ),
+                iterable = calls
+            )
+        return results
+        
+
+    def __try_call_helper(
+        self, call: Call, require_success: bool = True,
+        block_identifier: BlockIdentifier = "latest"
+    ) -> MulticallReturnData:
+        try:
+            call_return_data: Any = self.get_contract(
+                address = call.contract_address,
+                abi = call.contract_abi
+            ).get_function_by_name(
+                call.function_name
+            )(
+                *call.args
+            ).call(
+                block_identifier = block_identifier
+            )
+
+            return MulticallReturnData(
+                success = True,
+                return_data = (call_return_data, ) if len(call.output_types) == 1 else call_return_data
+            )
+        except Exception as e:
+            if require_success:
+                raise e
+            
+            return MulticallReturnData(
+                success = False,
+                return_data = None
+            )
 
 
     def __multicall(
