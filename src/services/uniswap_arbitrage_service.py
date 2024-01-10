@@ -1,7 +1,8 @@
-from .arbitrage_service import ArbitrageService, ExchangeFunction, ExchangeGraph, Arbitrage
+from .arbitrage_service import ArbitrageService, ExchangeGraph, Arbitrage
 from .uniswapv2_arbitrage_service import UniswapV2ArbitrageService
 from .uniswapv3_arbitrage_service import UniswapV3ArbitrageService
 
+from ..data_structures.exchange_graph import ExchangeFunction
 from ..utils.web3_utils import block_identifier_to_number
 
 from web3 import Web3

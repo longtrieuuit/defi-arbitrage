@@ -1,3 +1,4 @@
+from ..data_structures.call import Call, CallReturn
 from ..utils.abi import get_abi
 from ..utils.web3_utils import block_identifier_to_number
 
@@ -8,22 +9,7 @@ from eth_typing.evm import ChecksumAddress, BlockIdentifier, BlockNumber
 from eth_abi import decode
 
 from multiprocessing.pool import ThreadPool
-from typing import Dict, Any, List, Tuple, Iterable, Optional, Union, Callable
-from dataclasses import dataclass
-
-@dataclass
-class Call:
-    contract_address: ChecksumAddress
-    function_name: str
-    args: List[Any]
-    output_types: List[str]
-    contract_abi: Optional[Any] = None
-
-
-@dataclass
-class MulticallReturnData: # TODO rename this
-    success: bool
-    return_data: Optional[Iterable[Any]] = None
+from typing import Dict, Any, List, Tuple, Optional, Union, Callable
 
 
 class ContractService:
@@ -79,7 +65,7 @@ class ContractService:
     def multicall(
         self, calls: List[Union[Call, Dict[str, Any]]],
         require_success: bool = True, block_identifier: BlockIdentifier = "latest",
-        callbacks: Optional[List[Callable[[MulticallReturnData], Any]]] = None
+        callbacks: Optional[List[Callable[[CallReturn], Any]]] = None
     ) -> List[Any]:
         if callbacks is not None:
             assert len(calls) == len(callbacks), (
@@ -88,7 +74,7 @@ class ContractService:
 
         calls: List[Call] = self.__prepare_calls(calls = calls)
 
-        multicall_result: List[MulticallReturnData] = self.__multicall(
+        multicall_result: List[CallReturn] = self.__multicall(
             calls = calls,
             require_success = require_success,
             block_identifier = block_identifier
@@ -107,7 +93,7 @@ class ContractService:
     def batch_call_simple(
         self, calls: List[Union[Call, Dict[str, Any]]],
         require_success: bool = True, block_identifier: BlockIdentifier = "latest",
-        callbacks: Optional[List[Callable[[MulticallReturnData], Any]]] = None
+        callbacks: Optional[List[Callable[[CallReturn], Any]]] = None
     ) -> List[Any]:
         if callbacks is not None:
             assert len(calls) == len(callbacks), (
@@ -116,7 +102,7 @@ class ContractService:
 
         calls: List[Call] = self.__prepare_calls(calls = calls)
 
-        results: List[MulticallReturnData] = self.__batch_call_simple(
+        results: List[CallReturn] = self.__batch_call_simple(
             calls = calls,
             require_success = require_success,
             block_identifier = block_identifier
@@ -135,7 +121,7 @@ class ContractService:
     def batch_call_multithreading(
         self, calls: List[Union[Call, Dict[str, Any]]],
         require_success: bool = True, block_identifier: BlockIdentifier = "latest",
-        callbacks: Optional[List[Callable[[MulticallReturnData], Any]]] = None
+        callbacks: Optional[List[Callable[[CallReturn], Any]]] = None
     ) -> List[Any]:
         if callbacks is not None:
             assert len(calls) == len(callbacks), (
@@ -144,7 +130,7 @@ class ContractService:
 
         calls: List[Call] = self.__prepare_calls(calls = calls)
 
-        results: List[MulticallReturnData] = self.__batch_call_multithreading(
+        results: List[CallReturn] = self.__batch_call_multithreading(
             calls = calls,
             require_success = require_success,
             block_identifier = block_identifier
@@ -185,7 +171,7 @@ class ContractService:
     def __batch_call_simple(
         self, calls: List[Call], require_success: bool = True,
         block_identifier: BlockIdentifier = "latest"
-    ) -> List[MulticallReturnData]:
+    ) -> List[CallReturn]:
         return [
             self.__try_call_helper(
                 call = call,
@@ -199,8 +185,8 @@ class ContractService:
     def __batch_call_multithreading(
         self, calls: List[Call], require_success: bool = True,
         block_identifier: BlockIdentifier = "latest"
-    ) -> List[MulticallReturnData]:
-        results: List[MulticallReturnData] = []
+    ) -> List[CallReturn]:
+        results: List[CallReturn] = []
         with ThreadPool() as pool:
             results = pool.map(
                 func = lambda call: self.__try_call_helper(
@@ -216,7 +202,7 @@ class ContractService:
     def __try_call_helper(
         self, call: Call, require_success: bool = True,
         block_identifier: BlockIdentifier = "latest"
-    ) -> MulticallReturnData:
+    ) -> CallReturn:
         try:
             call_return_data: Any = self.get_contract(
                 address = call.contract_address,
@@ -229,7 +215,7 @@ class ContractService:
                 block_identifier = block_identifier
             )
 
-            return MulticallReturnData(
+            return CallReturn(
                 success = True,
                 return_data = (call_return_data, ) if len(call.output_types) == 1 else call_return_data
             )
@@ -237,7 +223,7 @@ class ContractService:
             if require_success:
                 raise e
             
-            return MulticallReturnData(
+            return CallReturn(
                 success = False,
                 return_data = None
             )
@@ -246,7 +232,7 @@ class ContractService:
     def __multicall(
         self, calls: List[Call], require_success: bool = True,
         block_identifier: BlockIdentifier = "latest"
-    ) -> List[MulticallReturnData]:
+    ) -> List[CallReturn]:
         encoded_calls: List[Tuple[ChecksumAddress, str]] = [
             (
                 call.contract_address,
@@ -263,7 +249,7 @@ class ContractService:
         )
         
         return [
-            MulticallReturnData(
+            CallReturn(
                 success = encoded_result[0],
                 return_data = decode(call.output_types, encoded_result[1])
                     if encoded_result[0] else None

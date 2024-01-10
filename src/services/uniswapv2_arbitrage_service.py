@@ -1,7 +1,8 @@
-from .contract_service import Call, MulticallReturnData
+from .contract_service import Call, CallReturn
 from .uniswapv2_service import UniswapV2Service
-from .arbitrage_service import ArbitrageService, ExchangeFunction, ExchangeGraph, Arbitrage, QuoteFunctionMeta
+from .arbitrage_service import ArbitrageService, ExchangeGraph, Arbitrage, QuoteFunctionMeta
 
+from ..data_structures.exchange_graph import ExchangeFunction
 from ..utils.web3_utils import block_identifier_to_number
 
 from web3 import Web3
@@ -29,7 +30,7 @@ class UniswapV2ArbitrageService():
 
     
     def get_exchange_functions(self, block_identifier: BlockIdentifier = "latest") -> List[ExchangeFunction]:
-        quote_callback: Callable[[MulticallReturnData], int] = lambda result: (
+        quote_callback: Callable[[CallReturn], int] = lambda result: (
             result.return_data[0][1] if result.success else 0
         )
 
