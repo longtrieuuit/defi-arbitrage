@@ -1,6 +1,6 @@
 from .arbitrage_service import ArbitrageService, ExchangeGraph, Arbitrage
-from .uniswapv2_arbitrage_service import UniswapV2ArbitrageService
-from .uniswapv3_arbitrage_service import UniswapV3ArbitrageService
+from .uniswapv2_service import UniswapV2Service
+from .uniswapv3_service import UniswapV3Service
 
 from ..data_structures.exchange_graph import ExchangeFunction
 from ..utils.web3_utils import block_identifier_to_number
@@ -26,12 +26,12 @@ class UniswapArbitrageService():
             api_keys = self.api_keys
         )
 
-        self.uniswapv2_arbitrage_service: UniswapV2ArbitrageService = UniswapV2ArbitrageService(
+        self.uniswapv2_service: UniswapV2Service = UniswapV2Service(
             w3 = self.w3,
             executor_private_key = executor_private_key
         )
 
-        self.uniswapv3_arbitrage_service: UniswapV3ArbitrageService = UniswapV3ArbitrageService(
+        self.uniswapv3_service: UniswapV3Service = UniswapV3Service(
             w3 = self.w3,
             executor_private_key = executor_private_key
         )
@@ -46,8 +46,8 @@ class UniswapArbitrageService():
         )
 
         exchange_functions: List[ExchangeFunction] = (
-            self.uniswapv2_arbitrage_service.get_exchange_functions(block_identifier = block_number)
-            + self.uniswapv3_arbitrage_service.get_exchange_functions(block_identifier = block_number)
+            self.uniswapv2_service.get_exchange_functions(block_identifier = block_number)
+            + self.uniswapv3_service.get_exchange_functions(block_identifier = block_number)
         )
 
         return self.arbitrage_service.find_arbitrages_bellman_ford(
