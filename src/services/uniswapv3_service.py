@@ -14,10 +14,22 @@ from eth_account.account import Account
 from eth_account.signers.local import LocalAccount
 from eth_typing.evm import ChecksumAddress, BlockIdentifier
 
+from enum import Enum
 from hexbytes import HexBytes
 from typing import Any, List, Callable
 from typing_extensions import Self
 
+
+class FeeAmount(Enum):
+    LOWEST = 100
+    LOW = 500
+    MEDIUM = 3000
+    HIGH = 10000
+
+    @classmethod
+    def decimals() -> int:
+        return 6
+    
 
 class UniswapV3Service(ExchangeService):
     # Quoter

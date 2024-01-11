@@ -70,69 +70,57 @@ def perf_test_multicall(calls: List[Dict[str, Any]], block_number: int) -> List[
         return -1
 
 
-def perf_test_quotes(block_number: int, n: int = 8):
+def perf_test_quotes(block_number: int, n: int = 100):
     perf_test_result: List[Dict[str, Any]] = []
-    for nums_of_tokens in range(1, len(test_tokens) + 1):
-        for iter in range(1, n + 1):
-            print(nums_of_tokens, iter)
-            calls:  List[Dict[str, Any]] = [
-                {
-                    "contract_address": UniswapV3Service.QUOTER_ADDRESS,
-                    "function_name": "quoteExactInputSingle",
-                    "args": [
-                        (
-                            test_token_in,
-                            token_out, 
-                            test_amount_in,
-                            fee_amount.value,
-                            0
-                        )
-                    ],
-                    "output_types": [
-                        "uint256", "uint160", "uint32", "uint256"
-                    ] # (amountOut, sqrtPriceX96After, initializedTicksCrossed, gasEstimate)
-                }
-                for token_out in sample(population = test_tokens, k = nums_of_tokens)
-                if test_token_in != token_out
-                for fee_amount in FeeAmount
-            ]
+    for iter in range(1, n + 1):
+        print(iter)
+        calls:  List[Dict[str, Any]] = [
+            {
+                "contract_address": UniswapV3Service.QUOTER_ADDRESS,
+                "function_name": "quoteExactInputSingle",
+                "args": [
+                    (
+                        test_token_in,
+                        token_out, 
+                        test_amount_in,
+                        fee_amount.value,
+                        0
+                    )
+                ],
+                "output_types": [
+                    "uint256", "uint160", "uint32", "uint256"
+                ] # (amountOut, sqrtPriceX96After, initializedTicksCrossed, gasEstimate)
+            }
+            for token_out in test_tokens
+            if test_token_in != token_out
+            for fee_amount in FeeAmount
+        ] * 3
 
-            perf_test_result.extend([
-                {
-                    "nums_of_tokens": nums_of_tokens,
-                    "iter": iter,
-                    "method": "synchronous",
-                    "runtime": perf_test_simple(
-                        calls = calls,
-                        block_number = block_number
-                    )
-                },
-                {
-                    "nums_of_tokens": nums_of_tokens,
-                    "iter": iter,
-                    "method": "asynchronous",
-                    "runtime": perf_test_multithreading(
-                        calls = calls,
-                        block_number = block_number
-                    )
-                },
-                {
-                    "nums_of_tokens": nums_of_tokens,
-                    "iter": iter,
-                    "method": "multicall",
-                    "runtime": perf_test_multicall(
-                        calls = calls,
-                        block_number = block_number
-                    )
-                }
-            ])
+        perf_test_result.extend([
+            {
+                "iter": iter,
+                "method": "asynchronous",
+                "runtime": perf_test_multithreading(
+                    calls = calls,
+                    block_number = block_number
+                )
+            },
+            {
+                "iter": iter,
+                "method": "multicall",
+                "runtime": perf_test_multicall(
+                    calls = calls,
+                    block_number = block_number
+                )
+            }
+        ])
 
     return pd.DataFrame(perf_test_result)
 
 
 def main():
     df = perf_test_quotes(block_number = 18100000)
-    df.to_csv("data/perf_test_quote.csv", index = False)
+    df.to_csv("data/perf_test_quote_stress.csv", index = False)
 
 
 if __name__ == "__main__":
