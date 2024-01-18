@@ -9,6 +9,7 @@ from eth_typing.evm import ChecksumAddress, BlockIdentifier, BlockNumber
 from eth_abi import decode
 
 from multiprocessing.pool import ThreadPool
+from itertools import chain
 from typing import Dict, Any, List, Tuple, Optional, Union, Callable
 
 
@@ -65,7 +66,7 @@ class ContractService:
     def multicall(
         self, calls: List[Union[Call, Dict[str, Any]]],
         require_success: bool = True, block_identifier: BlockIdentifier = "latest",
-        callbacks: Optional[List[Callable[[CallReturn], Any]]] = None
+        callbacks: Optional[List[Callable[[CallReturn], Any]]] = None,
     ) -> List[Any]:
         if callbacks is not None:
             assert len(calls) == len(callbacks), (
@@ -77,7 +78,8 @@ class ContractService:
         multicall_result: List[CallReturn] = self.__multicall(
             calls = calls,
             require_success = require_success,
-            block_identifier = block_identifier
+            block_identifier = block_identifier,
+            chunk_size = max(1, len(calls) // 4)
         )
 
         if callbacks is None:
@@ -231,7 +233,8 @@ class ContractService:
 
     def __multicall(
         self, calls: List[Call], require_success: bool = True,
-        block_identifier: BlockIdentifier = "latest"
+        block_identifier: BlockIdentifier = "latest",
+        chunk_size: int = 5
     ) -> List[CallReturn]:
         encoded_calls: List[Tuple[ChecksumAddress, str]] = [
             (
@@ -244,9 +247,26 @@ class ContractService:
             for call in calls
         ]
 
-        encoded_results = self.multicall_contract.functions.tryAggregate(require_success, encoded_calls).call(
-            block_identifier = block_identifier
-        )
+        encoded_call_chunks: List[List[Tuple[ChecksumAddress, str]]] = [
+            encoded_calls[i: i + chunk_size]
+            for i in range(0, len(encoded_calls), chunk_size)
+        ]
+
+        encoded_results: List[CallReturn] = []
+        with ThreadPool() as pool:
+            encoded_results = list(
+                chain.from_iterable(
+                    pool.map(
+                        func = lambda encoded_call_chunk: self.multicall_contract.functions.tryAggregate(
+                            require_success,
+                            encoded_call_chunk
+                        ).call(
+                            block_identifier = block_identifier
+                        ),
+                        iterable = encoded_call_chunks
+                    )
+                )
+            )
         
         return [
             CallReturn(
