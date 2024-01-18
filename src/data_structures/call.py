@@ -13,6 +13,6 @@ class Call:
 
 
 @dataclass
-class CallReturn: # TODO rename this
+class CallReturn:
     success: bool
     return_data: Optional[Iterable[Any]] = None
