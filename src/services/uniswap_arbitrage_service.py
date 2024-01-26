@@ -22,8 +22,7 @@ class UniswapArbitrageService():
         self.api_keys: Dict[str, str] = api_keys
         
         self.arbitrage_service: ArbitrageService = ArbitrageService(
-            w3 = self.w3,
-            api_keys = self.api_keys
+            w3 = self.w3
         )
 
         self.uniswapv2_service: UniswapV2Service = UniswapV2Service(
