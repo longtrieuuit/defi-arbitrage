@@ -66,7 +66,7 @@ class ContractService:
     def multicall(
         self, calls: List[Union[Call, Dict[str, Any]]],
         require_success: bool = True, block_identifier: BlockIdentifier = "latest",
-        callbacks: Optional[List[Callable[[CallReturn], Any]]] = None,
+        callbacks: Optional[List[Callable[[CallReturn], Any]]] = None
     ) -> List[Any]:
         if callbacks is not None:
             assert len(calls) == len(callbacks), (
