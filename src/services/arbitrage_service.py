@@ -13,6 +13,7 @@ from copy import deepcopy
 from typing import (
     Dict,
     List,
+    Optional
 )
 from typing_extensions import Self
 from dataclasses import asdict
@@ -29,9 +30,16 @@ class ArbitrageService():
         )
 
     
+    def get_recommended_u_eth(self: Self, block_number: BlockNumber) -> float:
+        base_fee_per_gas: int = self.contract_service.get_base_fee_per_gas(
+            block_identifier = block_number
+        )
+        return base_fee_per_gas * 1e6
+
+    
     def find_arbitrages_naive(
-        self: Self, exchange_graph: ExchangeGraph,
-        max_hops: int, block_identifier: BlockIdentifier = "latest"
+        self: Self, exchange_graph: ExchangeGraph, u_eth: Optional[float] = None,
+        max_hops: int = 3, block_identifier: BlockIdentifier = "latest"
     ) -> List[Arbitrage]:
         block_number: BlockNumber = block_identifier_to_number(
             w3 = self.w3,
@@ -39,11 +47,10 @@ class ArbitrageService():
         )
 
         arbitrages: List[Arbitrage] = []
-        
-        base_fee_per_gas: int = self.contract_service.get_base_fee_per_gas(
-            block_identifier = block_number
-        )
-        test_exposure_eth: float = base_fee_per_gas * 1e6
+
+        if u_eth is None:
+            u_eth: float = self.get_recommended_u_eth(block_number = block_number)
+
         token_prices_eth: Dict[ChecksumAddress, int] = self.price_feed_service.fetch_price_eth(
             tokens = exchange_graph.tokens,
             block_identifier = block_number
@@ -51,7 +58,7 @@ class ArbitrageService():
 
         for token_in in exchange_graph.tokens:
             amount_in: int = round(
-                test_exposure_eth * token_prices_eth.get(token_in) * 1e18
+                u_eth * token_prices_eth.get(token_in) * 1e18
             )
             for hops in range(2, max_hops + 1):
                 arbitrages.extend(
@@ -69,8 +76,8 @@ class ArbitrageService():
 
 
     def find_arbitrages_bellman_ford(
-        self: Self, exchange_graph: ExchangeGraph,
-        max_hops: int, block_identifier: BlockIdentifier = "latest"
+        self: Self, exchange_graph: ExchangeGraph, u_eth: Optional[float] = None,
+        max_hops: int = 3, block_identifier: BlockIdentifier = "latest"
     ) -> List[Arbitrage]:
         assert max_hops > 1, f"At least 2 hops are needed for an arbitrage. Given max_hops = {max_hops}."
         
@@ -79,11 +86,8 @@ class ArbitrageService():
             block_identifier = block_identifier
         )
 
-        # TODO Make u_eth an input parameter instead
-        base_fee_per_gas: int = self.contract_service.get_base_fee_per_gas(
-            block_identifier = block_number
-        )
-        u_eth: float = base_fee_per_gas * 1e6
+        if u_eth is None:
+            u_eth: float = self.get_recommended_u_eth(block_number = block_number)
 
         quote_graph: QuoteGraph = self.__construct_quote_graph(
             exchange_graph = exchange_graph,
@@ -131,11 +135,7 @@ class ArbitrageService():
                     Arbitrage(
                         path = path,
                         block_number = block_number,
-                        expected_gas = 0
-                        # expected_gas = self.estimate_gas(
-                        #     path = path,
-                        #     block_identifier = block_number
-                        # )
+                        expected_gas = 0 # TODO implement expected gas
                     )
                 )
         return arbitrages
