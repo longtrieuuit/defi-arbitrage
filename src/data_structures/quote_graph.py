@@ -23,7 +23,7 @@ class Quote():
     negative_log_exchange_rate: float = field(init = False)
 
     def __post_init__(self) -> None:
-        self.exchange_rate = self.amount_out / self.amount_in
+        self.exchange_rate = self.amount_out / self.amount_in if self.amount_in != 0 else 0
         self.negative_log_exchange_rate = (
             - log2(self.exchange_rate) if self.exchange_rate > 0 else float("inf")
         )
