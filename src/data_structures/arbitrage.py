@@ -86,3 +86,10 @@ class Arbitrage():
         self.amount_out = self.path[-1].amount_out
 
         self.return_precost = self.amount_out / self.amount_in - 1
+
+    @property
+    def profit(self) -> int:
+        return self.amount_out - self.amount_in
+    
+    def is_profitable(self) -> bool:
+        return self.profit > 0
