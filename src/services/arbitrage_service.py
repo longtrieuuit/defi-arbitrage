@@ -8,7 +8,9 @@ from ..utils.web3_utils import block_identifier_to_number
 
 from web3 import Web3
 from eth_typing.evm import ChecksumAddress, BlockNumber, BlockIdentifier
+import numpy
 
+from multiprocessing.pool import ThreadPool
 from copy import deepcopy
 from typing import (
     Dict,
@@ -18,6 +20,8 @@ from typing import (
 from typing_extensions import Self
 from dataclasses import asdict
 
+
+# TODO Make the function to be lazy: only generate 1 arbitrage at a time
 class ArbitrageService():
     def __init__(self: Self, w3: Web3) -> None:
         self.w3: Web3 = w3
@@ -95,49 +99,20 @@ class ArbitrageService():
             block_number = block_number
         )
 
-        arbitrages: List[Arbitrage] = []
         path_meta_list = quote_graph.find_potential_arbitrage_path_meta()
+
+        arbitrages: List[Arbitrage] = []
         for path_meta in path_meta_list:
-            path: Path = Path()
             amount_in: int = quote_graph.get_quote(
                 path_meta[0]
             ).amount_in
-            curr_amount: int = amount_in
-            for edge in path_meta:
-                quote_function_meta: QuoteFunctionMeta = edge.get_quote_function_meta(
-                    amount_in = curr_amount,
-                    block_identifier = block_number
-                )
-
-                next_amount: int = self.contract_service.multicall(
-                    calls = [
-                        quote_function_meta.call
-                    ],
-                    require_success = False,
-                    block_identifier = block_number,
-                    callbacks = [
-                        quote_function_meta.callback
-                    ]
-                )[0]
-
-                path.append(
-                    Hop(
-                        exchange_edge = edge,
-                        amount_in = curr_amount,
-                        amount_out = next_amount,
-                        block_number = block_number
-                    )
-                )
-                curr_amount = next_amount
-
-            if curr_amount > amount_in:
-                arbitrages.append(
-                    Arbitrage(
-                        path = path,
-                        block_number = block_number,
-                        expected_gas = 0 # TODO implement expected gas
-                    )
-                )
+            arbitrage: Optional[Arbitrage] = self.evaluate_arbitrage(
+                path_meta = path_meta,
+                amount_in = amount_in,
+                block_number = block_number
+            )
+            if arbitrage is not None:
+                arbitrages.append(arbitrage)
         return arbitrages
 
 
@@ -307,3 +282,127 @@ class ArbitrageService():
                 curr_path.pop()
         
         return arbitrages
+    
+
+    def evaluate_arbitrage(
+        self: Self, path_meta: List[ExchangeEdge], amount_in: int,
+        block_number: BlockNumber, only_profitable: bool = True
+    ) -> Optional[Arbitrage]:
+        path: Path = Path()
+        block_number: BlockNumber = block_number
+
+        curr_amount: int = amount_in
+        for edge in path_meta:
+            quote_function_meta: QuoteFunctionMeta = edge.get_quote_function_meta(
+                amount_in = curr_amount,
+                block_identifier = block_number
+            )
+
+            next_amount: int = self.contract_service.multicall(
+                calls = [
+                    quote_function_meta.call
+                ],
+                require_success = False,
+                block_identifier = block_number,
+                callbacks = [
+                    quote_function_meta.callback
+                ]
+            )[0]
+
+            path.append(
+                Hop(
+                    exchange_edge = edge,
+                    amount_in = curr_amount,
+                    amount_out = next_amount,
+                    block_number = block_number
+                )
+            )
+            curr_amount = next_amount
+
+        if (
+            not only_profitable
+            or curr_amount > amount_in # Profitable
+        ):
+            return Arbitrage(
+                path = path,
+                block_number = block_number,
+                expected_gas = 0 # TODO implement expected gas
+            )
+    
+        return None
+
+
+    # def __optimize_arbitrage_naive_sync(
+    #     self: Self, arbitrage: Arbitrage
+    # ) -> Arbitrage:
+    #     '''
+    #     Search for the optimal input amount around the given input amount
+    #     '''
+    #     path_meta: List[ExchangeEdge] = [hop.exchange_edge for hop in arbitrage.path]
+
+    #     amount_in_multipliers: List[float] = numpy.arange(0.1, 10.1, 0.1)
+
+    #     best_arbitrage: Arbitrage = arbitrage
+    #     for amount_in_multiplier in amount_in_multipliers:
+    #         amount_in: int = int(amount_in_multiplier * arbitrage.amount_in)
+
+    #         new_arbitrage: Optional[Arbitrage] = self.evaluate_arbitrage(
+    #             path_meta = path_meta,
+    #             amount_in = amount_in,
+    #             block_number = arbitrage.block_number
+    #         )
+
+    #         if new_arbitrage is None:
+    #             continue
+
+    #         if new_arbitrage.profit > best_arbitrage.profit:
+    #             best_arbitrage = new_arbitrage
+
+    #     return best_arbitrage
+
+
+    # def __optimize_arbitrage_naive_async(
+    #     self: Self, arbitrage: Arbitrage
+    # ) -> Arbitrage:
+    #     '''
+    #     Search for the optimal input amount around the given input amount
+    #     '''
+    #     path_meta: List[ExchangeEdge] = [hop.exchange_edge for hop in arbitrage.path]
+
+    #     amount_in_multipliers: List[float] = numpy.arange(0.1, 10.1, 0.1)
+
+    #     best_arbitrage: Arbitrage = arbitrage
+    #     with ThreadPool() as pool:
+    #         new_arbitrage: Optional[Arbitrage] = max(
+    #             pool.map(
+    #                 func = lambda amount_in_multiplier: self.evaluate_arbitrage(
+    #                     path_meta = path_meta,
+    #                     amount_in = int(amount_in_multiplier * arbitrage.amount_in),
+    #                     block_number = arbitrage.block_number
+    #                 ),
+    #                 iterable = amount_in_multipliers
+    #             ),
+    #             key = lambda arbitrage: (
+    #                 arbitrage.profit if arbitrage is not None else -float("inf")
+    #             )
+    #         )
+
+    #         if (
+    #             new_arbitrage is not None
+    #             and new_arbitrage.profit > best_arbitrage.profit
+    #         ):
+    #             best_arbitrage = new_arbitrage
+
+    #     return best_arbitrage
+
+
+    # # TODO Try very large input amount and get the output amount.
+    # # Use this output amount to get the input amount
+    # def __optimize_arbitrage_chain(
+    #     self: Self, arbitrage: Arbitrage
+    # ) -> Arbitrage:
+    #     path_meta: List[ExchangeEdge] = [hop.exchange_edge for hop in arbitrage.path]
+        
+    #     best_arbitrage: Arbitrage = None
+
+    #     curr_input_amount: int = int(1e36)
