@@ -18,10 +18,7 @@ def main() -> None:
 
     uniswap_arbitrage_service: UniswapArbitrageService = UniswapArbitrageService(
         w3 = w3,
-        executor_private_key = env.get("WALLET_PRIVATE_KEY"),
-        api_keys = {
-            "bitquery": env.get("BITQUERY_API_KEY")
-        }
+        executor_private_key = env.get("WALLET_PRIVATE_KEY")
     )
 
     print(perf_counter() - b)

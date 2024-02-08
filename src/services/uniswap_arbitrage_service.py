@@ -14,12 +14,11 @@ from hexbytes import HexBytes
 from typing import List, Dict
 
 class UniswapArbitrageService():
-    def __init__(self, w3: Web3, executor_private_key: HexBytes, api_keys: Dict[str, str]) -> None:
+    def __init__(self, w3: Web3, executor_private_key: HexBytes) -> None:
         print("Initializing Uniswap Arbitrage Service")
 
         self.w3: Web3 = w3
         self.executor: LocalAccount = Account.from_key(executor_private_key)
-        self.api_keys: Dict[str, str] = api_keys
         
         self.arbitrage_service: ArbitrageService = ArbitrageService(
             w3 = self.w3
