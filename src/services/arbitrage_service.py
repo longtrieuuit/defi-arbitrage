@@ -15,6 +15,7 @@ from copy import deepcopy
 from typing import (
     Dict,
     List,
+    Generator,
     Optional
 )
 from typing_extensions import Self
@@ -22,7 +23,6 @@ from dataclasses import asdict
 from itertools import chain
 
 
-# TODO Make the function to be lazy: only generate 1 arbitrage at a time
 class ArbitrageService():
     def __init__(self: Self, w3: Web3) -> None:
         self.w3: Web3 = w3
@@ -45,13 +45,11 @@ class ArbitrageService():
     def find_arbitrages_naive(
         self: Self, exchange_graph: ExchangeGraph, u_eth: Optional[float] = None,
         max_hops: int = 3, block_identifier: BlockIdentifier = "latest"
-    ) -> List[Arbitrage]:
+    ) -> Generator[Arbitrage, None, None]:
         block_number: BlockNumber = block_identifier_to_number(
             w3 = self.w3,
             block_identifier = block_identifier
         )
-
-        arbitrages: List[Arbitrage] = []
 
         if u_eth is None:
             u_eth: float = self.get_recommended_u_eth(block_number = block_number)
@@ -66,24 +64,20 @@ class ArbitrageService():
                 u_eth * token_prices_eth.get(token_in) * 1e18
             )
             for hops in range(2, max_hops + 1):
-                arbitrages.extend(
-                    self.__find_arbitrages_naive(
-                        exchange_graph = exchange_graph,
-                        hops = hops,
-                        token_in = token_in,
-                        amount_in = amount_in,
-                        curr_path = Path(),
-                        block_number = block_number
-                    )
+                yield from self.__find_arbitrages_naive(
+                    exchange_graph = exchange_graph,
+                    hops = hops,
+                    token_in = token_in,
+                    amount_in = amount_in,
+                    curr_path = Path(),
+                    block_number = block_number
                 )
-        
-        return arbitrages
 
 
     def find_arbitrages_bellman_ford(
         self: Self, exchange_graph: ExchangeGraph, u_eth: Optional[float] = None,
         max_hops: int = 3, block_identifier: BlockIdentifier = "latest"
-    ) -> List[Arbitrage]:
+    ) -> Generator[Arbitrage, None, None]:
         assert max_hops > 1, f"At least 2 hops are needed for an arbitrage. Given max_hops = {max_hops}."
         
         block_number: BlockNumber = block_identifier_to_number(
@@ -100,24 +94,24 @@ class ArbitrageService():
             block_number = block_number
         )
 
-        path_meta_list = quote_graph.find_potential_arbitrage_path_meta()
+        path_meta_list: Generator[List[ExchangeEdge], None, None] = quote_graph.find_potential_arbitrage_path_meta()
 
-        arbitrages: List[Arbitrage] = []
         for path_meta in path_meta_list:
             amount_in: int = quote_graph.get_quote(
                 path_meta[0]
             ).amount_in
+
             arbitrage: Optional[Arbitrage] = self.evaluate_arbitrage(
                 path_meta = path_meta,
                 amount_in = amount_in,
                 block_number = block_number
             )
+
             if arbitrage is not None:
-                arbitrages.append(arbitrage)
-        return arbitrages
+                yield arbitrage
 
 
-    def __construct_quote_graph(
+    def __construct_quote_graph( # TODO optimize this
         self: Self, exchange_graph: ExchangeGraph,
         u_eth: float, block_number: BlockNumber
     ) -> QuoteGraph:
@@ -183,12 +177,10 @@ class ArbitrageService():
         self, exchange_graph: ExchangeGraph, hops: int,
         token_in: ChecksumAddress, amount_in: int,
         curr_path: Path, block_number: BlockNumber
-    ) -> List[Arbitrage]:  
+    ) -> Generator[Arbitrage, None, None]:  
         curr_token_in: ChecksumAddress = curr_path[-1].exchange_edge.token_out if curr_path else token_in
         curr_amount_in: int = curr_path[-1].amount_out if curr_path else amount_in
 
-        arbitrages: List[Arbitrage] = []
-    
         if hops == 1:
             edges: List[ExchangeEdge] = exchange_graph.get_edges(
                 token_in = curr_token_in,
@@ -222,15 +214,12 @@ class ArbitrageService():
                     )
                 )
                 if curr_path[-1].amount_out > amount_in:
-                    arbitrages.append(
-                        Arbitrage(
-                            path = deepcopy(curr_path),
-                            expected_gas = 0, # TODO implement expected gas
-                            block_number = block_number
-                        )
+                    yield Arbitrage(
+                        path = deepcopy(curr_path),
+                        expected_gas = 0, # TODO implement expected gas
+                        block_number = block_number
                     )
                 curr_path.pop()
-            return arbitrages
 
         for next_token in exchange_graph.tokens:
             if next_token in curr_path or curr_token_in == next_token:
@@ -269,19 +258,15 @@ class ArbitrageService():
                         block_number = block_number
                     )
                 )
-                arbitrages.extend(
-                    self.__find_arbitrages_naive(
-                        exchange_graph = exchange_graph,
-                        hops = hops - 1,
-                        token_in = token_in,
-                        amount_in = amount_in,
-                        curr_path = deepcopy(curr_path),
-                        block_number = block_number
-                    )
+                yield from self.__find_arbitrages_naive(
+                    exchange_graph = exchange_graph,
+                    hops = hops - 1,
+                    token_in = token_in,
+                    amount_in = amount_in,
+                    curr_path = deepcopy(curr_path),
+                    block_number = block_number
                 )
                 curr_path.pop()
-        
-        return arbitrages
     
 
     def evaluate_arbitrage(
@@ -332,7 +317,7 @@ class ArbitrageService():
         return None
 
 
-    # def __optimize_arbitrage_naive_sync(
+    # def optimize_arbitrage_naive_sync(
     #     self: Self, arbitrage: Arbitrage
     # ) -> Arbitrage:
     #     '''
@@ -361,7 +346,7 @@ class ArbitrageService():
     #     return best_arbitrage
 
 
-    # def __optimize_arbitrage_naive_async(
+    # def optimize_arbitrage_naive_async(
     #     self: Self, arbitrage: Arbitrage
     # ) -> Arbitrage:
     #     '''

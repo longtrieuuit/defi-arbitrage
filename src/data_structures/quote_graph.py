@@ -8,7 +8,8 @@ from math import log2
 from typing import (
     Any,
     Dict,
-    List
+    List,
+    Generator
 )
 
 
@@ -43,8 +44,7 @@ class QuoteGraph(MultiDiGraph):
             amount_out = edge_data.get("amount_out")
         )
 
-    def find_potential_arbitrage_path_meta(self) -> List[List[ExchangeEdge]]:
-        path_meta_list: List[List[ExchangeEdge]] = []
+    def find_potential_arbitrage_path_meta(self) -> Generator[List[ExchangeEdge], None, None]:
         for source_token in self.nodes:
             try:
                 negative_cycle: List[ChecksumAddress] = find_negative_cycle(self, source_token, "negative_log_exchange_rate")
@@ -61,7 +61,6 @@ class QuoteGraph(MultiDiGraph):
                         key = lambda item: item[1].get("negative_log_exchange_rate")
                     )[0]
                     path_meta.append(best_exchange_edge)
-                path_meta_list.append(path_meta)
+                yield path_meta
             except NetworkXError:
                 continue
-        return path_meta_list
