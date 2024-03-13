@@ -19,6 +19,7 @@ from typing import (
 )
 from typing_extensions import Self
 from dataclasses import asdict
+from itertools import chain
 
 
 # TODO Make the function to be lazy: only generate 1 arbitrage at a time
@@ -134,48 +135,47 @@ class ArbitrageService():
 
         quote_graph: QuoteGraph = QuoteGraph(block_number = block_number)
 
-        for token_in in exchange_graph.tokens:
-            for token_out in exchange_graph.tokens:
-                if token_in == token_out:
-                    continue
-
-                amount_in: int = amount_in_dict.get(token_in)
-
-                quote_function_meta_list: List[QuoteFunctionMeta] = [
-                    edge.get_quote_function_meta(
-                        amount_in = amount_in,
-                        block_identifier = block_number
-                    )
-                    for edge in exchange_graph.get_edges(
-                        token_in = token_in,
-                        token_out = token_out
-                    )
-                ]
-            
-                amount_out_list: List[int] = self.contract_service.multicall(
-                    calls = [
-                        meta.call for meta in quote_function_meta_list
-                    ],
-                    require_success = False,
-                    block_identifier = block_number,
-                    callbacks = [
-                        meta.callback for meta in quote_function_meta_list
-                    ]
-                )
-
-                edges: List[ExchangeEdge] = exchange_graph.get_edges(
+        edges: List[ExchangeEdge] = list(
+            chain.from_iterable(
+                exchange_graph.get_edges(
                     token_in = token_in,
                     token_out = token_out
                 )
-                for edge, amount_out in zip(edges, amount_out_list):
-                    quote_graph.add_edge(
-                        token_in, token_out, edge, **asdict(Quote(
-                            token_in = token_in,
-                            token_out = token_out,
-                            amount_in = amount_in,
-                            amount_out = amount_out
-                        ))
-                    )
+                for token_in in exchange_graph.tokens
+                for token_out in exchange_graph.tokens
+                if token_in != token_out
+            )
+        )
+
+        quote_function_meta_list: List[QuoteFunctionMeta] = [
+            edge.get_quote_function_meta(
+                amount_in = amount_in_dict.get(edge.token_in),
+                block_identifier = block_number
+            )
+            for edge in edges
+        ]
+        
+        amount_out_list: List[int] = self.contract_service.multicall(
+            calls = [
+                meta.call for meta in quote_function_meta_list
+            ],
+            require_success = False,
+            block_identifier = block_number,
+            callbacks = [
+                meta.callback for meta in quote_function_meta_list
+            ]
+        )
+
+        for edge, amount_out in zip(edges, amount_out_list):
+            quote_graph.add_edge(
+                edge.token_in, edge.token_out, edge, **asdict(Quote(
+                    token_in = edge.token_in,
+                    token_out = edge.token_out,
+                    amount_in = amount_in_dict.get(edge.token_in),
+                    amount_out = amount_out
+                ))
+            )
+        
         return quote_graph
 
 
