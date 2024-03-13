@@ -23,13 +23,14 @@ def main() -> None:
 
     print(perf_counter() - b)
 
-    for i in range(18100000, 20100001, 1000):
+    tokens = uniswap_arbitrage_service.uniswapv3_service.fetch_top_tokens(
+        first = 12
+    )
+    # tokens = ["0x0590cc9232eBF68D81F6707A119898219342ecB9", "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"]
+
+    for i in range(18100000, 20100001, 10000):
         print(i, end=" ")
         b = perf_counter()
-        tokens = uniswap_arbitrage_service.uniswapv3_service.fetch_top_tokens(
-            first = 8
-        )
-        # tokens = ["0x0590cc9232eBF68D81F6707A119898219342ecB9", "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"]
         pprint(
             next(uniswap_arbitrage_service.find_arbitrages(
                 tokens = tokens,
