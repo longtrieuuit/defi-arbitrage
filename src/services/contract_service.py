@@ -78,8 +78,7 @@ class ContractService:
         multicall_result: List[CallReturn] = self.__multicall(
             calls = calls,
             require_success = require_success,
-            block_identifier = block_identifier,
-            chunk_size = max(1, len(calls) // 4)
+            block_identifier = block_identifier
         )
 
         if callbacks is None:
@@ -234,7 +233,7 @@ class ContractService:
     def __multicall(
         self, calls: List[Call], require_success: bool = True,
         block_identifier: BlockIdentifier = "latest",
-        chunk_size: int = 5
+        chunk_size: int = 10
     ) -> List[CallReturn]:
         encoded_calls: List[Tuple[ChecksumAddress, str]] = [
             (
