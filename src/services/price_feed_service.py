@@ -42,28 +42,28 @@ class PriceFeedService():
 
     def fetch_price_eth(self, tokens: List[ChecksumAddress], block_identifier: BlockIdentifier) -> Dict[ChecksumAddress, float]:
         return {
-            token_address: price_to_eth / 1e36
+            token_address: price_to_eth
             for token_address, price_to_eth in zip(
-                tokens, map(
-                    lambda result: result.return_data[0] if result.success else None,
-                    self.contract_service.multicall(
-                        calls = [
-                            {
-                                "contract_address": self.SPOT_AGGREGATOR_1INCH_ADDRESS,
-                                "function_name": "getRateToEth",
-                                "args": [
-                                    token_address,
-                                    True
-                                ],
-                                "output_types": [
-                                    "uint256"
-                                ]
-                            }
-                            for token_address in tokens
-                        ],
-                        require_success = True,
-                        block_identifier = block_identifier
-                    )
+                tokens, self.contract_service.multicall(
+                    calls = [
+                        {
+                            "contract_address": self.SPOT_AGGREGATOR_1INCH_ADDRESS,
+                            "function_name": "getRateToEth",
+                            "args": [
+                                token_address,
+                                True
+                            ],
+                            "output_types": [
+                                "uint256"
+                            ]
+                        }
+                        for token_address in tokens
+                    ],
+                    require_success = True,
+                    block_identifier = block_identifier,
+                    callbacks = [
+                        lambda result: result.return_data[0] / 1e36 if result.success else None
+                    ] * len(tokens)
                 )
             )
         }
