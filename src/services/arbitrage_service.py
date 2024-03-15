@@ -96,22 +96,23 @@ class ArbitrageService():
 
         path_meta_list: Generator[List[ExchangeEdge], None, None] = quote_graph.find_potential_arbitrage_path_meta()
 
-        for path_meta in path_meta_list:
-            amount_in: int = quote_graph.get_quote(
-                path_meta[0]
-            ).amount_in
-
-            arbitrage: Optional[Arbitrage] = self.evaluate_arbitrage(
-                path_meta = path_meta,
-                amount_in = amount_in,
-                block_number = block_number
+        with ThreadPool() as pool:
+            yield from filter(
+                lambda arbitrage: arbitrage is not None,
+                pool.map(
+                    func = lambda path_meta: self.evaluate_arbitrage(
+                        path_meta = path_meta,
+                        amount_in = quote_graph.get_quote(
+                            path_meta[0]
+                        ).amount_in,
+                        block_number = block_number
+                    ),
+                    iterable = path_meta_list
+                )
             )
 
-            if arbitrage is not None:
-                yield arbitrage
 
-
-    def __construct_quote_graph( # TODO optimize this
+    def __construct_quote_graph(
         self: Self, exchange_graph: ExchangeGraph,
         u_eth: float, block_number: BlockNumber
     ) -> QuoteGraph:
