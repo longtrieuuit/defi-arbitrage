@@ -4,7 +4,6 @@ from eth_typing.evm import ChecksumAddress, BlockNumber
 
 from dataclasses import dataclass, field
 from typing import (
-    Any,
     List,
     Iterable,
     SupportsIndex
@@ -66,6 +65,8 @@ class Path(List[Hop]):
             super().copy()
         )
     
+    def __hash__(self) -> int:
+        return frozenset(map(lambda hop: hop.exchange_edge, self)).__hash__()
 
 @dataclass
 class Arbitrage():
@@ -93,3 +94,15 @@ class Arbitrage():
     
     def is_profitable(self) -> bool:
         return self.profit > 0
+    
+    def __hash__(self) -> int:
+        return (
+            self.path,
+            self.block_number
+        ).__hash__()
+    
+    def __eq__(self, __value: object) -> bool:
+        return (
+            isinstance(__value, Arbitrage)
+            and self.__hash__() == self.__hash__()
+        )
