@@ -12,11 +12,12 @@ from web3.contract.contract import Contract, ContractFunction
 from web3.types import TxParams
 from eth_account.account import Account
 from eth_account.signers.local import LocalAccount
+from eth_abi.packed import encode_packed
 from eth_typing.evm import ChecksumAddress, BlockIdentifier
 
 from enum import Enum
 from hexbytes import HexBytes
-from typing import Any, List, Callable
+from typing import Any, Dict, List, Callable, Union
 from typing_extensions import Self
 
 
@@ -264,3 +265,24 @@ class UniswapV3Service(ExchangeService):
                 '''.format(first)
             ).get("data").get("tokens")
         ))
+    
+
+    def quote_exact_input(
+        self, amount_in: int, route: List[Union[ChecksumAddress, int]],
+        block_identifier: BlockIdentifier = "latest"
+    ) -> Dict[str, int]:
+        return {
+            key: val
+            for key, val in zip(
+                ("amount_out", "sqrt_price_x96_after", "initialized_ticks_crossed", "expected_gas"), 
+                self.quoter.get_function_by_name("quoteExactInput")(
+                    encode_packed(
+                        types = ["address" if isinstance(item, str) else "uint24" for item in route],
+                        args = route
+                    ),
+                    amount_in
+                ).call(
+                    block_identifier = block_identifier
+                )
+            )
+        }
