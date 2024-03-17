@@ -2,8 +2,10 @@ from .exchange_graph import ExchangeEdge
 
 from eth_typing.evm import ChecksumAddress, BlockNumber
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from typing import (
+    Any,
+    Dict,
     List,
     Iterable,
     SupportsIndex
@@ -106,3 +108,6 @@ class Arbitrage():
             isinstance(__value, Arbitrage)
             and self.__hash__() == self.__hash__()
         )
+
+    def asdict(self) -> Dict[str, Any]:
+        return asdict(self)
