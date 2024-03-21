@@ -39,7 +39,7 @@ class ArbitrageService():
         base_fee_per_gas: int = self.contract_service.get_base_fee_per_gas(
             block_identifier = block_number
         )
-        return base_fee_per_gas * 1e6
+        return base_fee_per_gas * 1e7
 
     
     def find_arbitrages_naive(
