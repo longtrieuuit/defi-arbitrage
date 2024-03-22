@@ -59,19 +59,26 @@ class ArbitrageService():
             block_identifier = block_number
         )
 
-        for token_in in exchange_graph.tokens:
-            amount_in: int = round(
-                u_eth * token_prices_eth.get(token_in) * 1e18
-            )
-            for hops in range(2, max_hops + 1):
-                yield from self.__find_arbitrages_naive(
-                    exchange_graph = exchange_graph,
-                    hops = hops,
-                    token_in = token_in,
-                    amount_in = amount_in,
-                    curr_path = Path(),
-                    block_number = block_number
+        with ThreadPool() as pool:
+            yield from chain.from_iterable(
+                pool.map(
+                    func = lambda tup: list(self.__find_arbitrages_naive(
+                        exchange_graph = exchange_graph,
+                        hops = tup[1],
+                        token_in = tup[0],
+                        amount_in = round(
+                            u_eth * token_prices_eth.get(tup[0]) * 1e18
+                        ),
+                        curr_path = Path(),
+                        block_number = block_number
+                    )),
+                    iterable = (
+                        (token_in, hops)
+                        for hops in range(2, max_hops + 1)
+                        for token_in in exchange_graph.tokens
+                    )
                 )
+            )
 
 
     def find_arbitrages_bellman_ford(
@@ -221,14 +228,16 @@ class ArbitrageService():
                         block_number = block_number
                     )
                 curr_path.pop()
-
-        for next_token in exchange_graph.tokens:
-            if next_token in curr_path or curr_token_in == next_token:
-                continue
-            
-            edges: List[ExchangeEdge] = exchange_graph.get_edges(
-                token_in = curr_token_in,
-                token_out = next_token
+        else:
+            edges: List[ExchangeEdge] = list(
+                chain.from_iterable(
+                    exchange_graph.get_edges(
+                        token_in = curr_token_in,
+                        token_out = next_token
+                    )
+                    for next_token in exchange_graph.tokens
+                    if next_token not in curr_path and curr_token_in != next_token
+                )
             )
 
             amount_out_list: List[int] = self.contract_service.multicall(
