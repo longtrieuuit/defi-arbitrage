@@ -1,0 +1,2679 @@
+[
+  {
+    "block_number": 19000000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.0065519804e17,
+    "time": 6.776397958000075,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9790>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9310>"
+              }
+            },
+            "amount_in": 78278635840025,
+            "amount_out": 78474555665732,
+            "block_number": 19000000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741327310>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741327430>"
+              }
+            },
+            "amount_in": 78474555665732,
+            "amount_out": 78445941410032,
+            "block_number": 19000000
+          }
+        ],
+        "block_number": 19000000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 78278635840025,
+        "amount_out": 78445941410032,
+        "return_precost": 0.002137308196695109
+      }
+    ]
+  },
+  {
+    "block_number": 19010000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 1.751598134e17,
+    "time": 5.257825167000078,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b99d0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9af0>"
+              }
+            },
+            "amount_in": 69889249937585,
+            "amount_out": 70064172374106,
+            "block_number": 19010000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7301d4040>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b7e50>"
+              }
+            },
+            "amount_in": 70064172374106,
+            "amount_out": 70038749260033,
+            "block_number": 19010000
+          }
+        ],
+        "block_number": 19010000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 69889249937585,
+        "amount_out": 70038749260033,
+        "return_precost": 0.0021390889526144985
+      }
+    ]
+  },
+  {
+    "block_number": 19020000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 3.919072972e17,
+    "time": 6.204936332999978,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9430>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9b80>"
+              }
+            },
+            "amount_in": 154720212216084,
+            "amount_out": 155107453969052,
+            "block_number": 19020000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b7dc0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9ee0>"
+              }
+            },
+            "amount_in": 155107453969052,
+            "amount_out": 155048386592822,
+            "block_number": 19020000
+          }
+        ],
+        "block_number": 19020000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 154720212216084,
+        "amount_out": 155048386592822,
+        "return_precost": 0.0021210827728161963
+      }
+    ]
+  },
+  {
+    "block_number": 19030000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 3.6470657681e17,
+    "time": 4.754053624999983,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9dc0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b91f0>"
+              }
+            },
+            "amount_in": 144839870476824,
+            "amount_out": 145202383200550,
+            "block_number": 19030000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9940>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9040>"
+              }
+            },
+            "amount_in": 145202383200550,
+            "amount_out": 145147391583778,
+            "block_number": 19030000
+          }
+        ],
+        "block_number": 19030000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 144839870476824,
+        "amount_out": 145147391583778,
+        "return_precost": 0.002123179936170949
+      }
+    ]
+  },
+  {
+    "block_number": 19040000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.1031050031e17,
+    "time": 4.684748334000005,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9820>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9550>"
+              }
+            },
+            "amount_in": 85168913880796,
+            "amount_out": 85382079050859,
+            "block_number": 19040000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b90d0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9700>"
+              }
+            },
+            "amount_in": 85382079050859,
+            "amount_out": 85350821535076,
+            "block_number": 19040000
+          }
+        ],
+        "block_number": 19040000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 85168913880796,
+        "amount_out": 85350821535076,
+        "return_precost": 0.002135845650616197
+      }
+    ]
+  },
+  {
+    "block_number": 19050000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 1.5175627439e17,
+    "time": 7.222079291999989,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5c10>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5e50>"
+              }
+            },
+            "amount_in": 61640958085109,
+            "amount_out": 37584461489,
+            "block_number": 19050000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9f70>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7204b9ca0>"
+              }
+            },
+            "amount_in": 37584461489,
+            "amount_out": 92277051705262,
+            "block_number": 19050000
+          }
+        ],
+        "block_number": 19050000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 61640958085109,
+        "amount_out": 92277051705262,
+        "return_precost": 0.4970087190704122
+      }
+    ]
+  },
+  {
+    "block_number": 19060000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 1.0904485844e17,
+    "time": 6.365938541000105,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5d30>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5310>"
+              }
+            },
+            "amount_in": 44995824411848,
+            "amount_out": 27435393784,
+            "block_number": 19060000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5ca0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5940>"
+              }
+            },
+            "amount_in": 27435393784,
+            "amount_out": 66458720083076,
+            "block_number": 19060000
+          }
+        ],
+        "block_number": 19060000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 44995824411848,
+        "amount_out": 66458720083076,
+        "return_precost": 0.4769974981406615
+      }
+    ]
+  },
+  {
+    "block_number": 19070000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.7568832433e17,
+    "time": 6.325863959000003,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa1f0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa3a0>"
+              }
+            },
+            "amount_in": 114101235725342,
+            "amount_out": 114058772333241,
+            "block_number": 19070000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa9d0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa790>"
+              }
+            },
+            "amount_in": 114058772333241,
+            "amount_out": 114344244534736,
+            "block_number": 19070000
+          }
+        ],
+        "block_number": 19070000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 114101235725342,
+        "amount_out": 114344244534736,
+        "return_precost": 0.0021297649219063075
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa700>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa430>"
+              }
+            },
+            "amount_in": 126196801845650,
+            "amount_out": 76946199220,
+            "block_number": 19070000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa9d0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa790>"
+              }
+            },
+            "amount_in": 76946199220,
+            "amount_out": 167924322047207,
+            "block_number": 19070000
+          }
+        ],
+        "block_number": 19070000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 126196801845650,
+        "amount_out": 167924322047207,
+        "return_precost": 0.3306543398191144
+      }
+    ]
+  },
+  {
+    "block_number": 19080000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 1.7171137976e17,
+    "time": 7.203184750000105,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa8b0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa940>"
+              }
+            },
+            "amount_in": 77045943683576,
+            "amount_out": 46977370072,
+            "block_number": 19080000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa670>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5160>"
+              }
+            },
+            "amount_in": 46977370072,
+            "amount_out": 104794867798304,
+            "block_number": 19080000
+          }
+        ],
+        "block_number": 19080000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 77045943683576,
+        "amount_out": 104794867798304,
+        "return_precost": 0.36016074030699796
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa160>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa5e0>"
+              }
+            },
+            "amount_in": 72103227027564,
+            "amount_out": 72077032981239,
+            "block_number": 19080000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7525aa670>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5160>"
+              }
+            },
+            "amount_in": 72077032981239,
+            "amount_out": 72257431114392,
+            "block_number": 19080000
+          }
+        ],
+        "block_number": 19080000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 72103227027564,
+        "amount_out": 72257431114392,
+        "return_precost": 0.002138657216674167
+      }
+    ]
+  },
+  {
+    "block_number": 19090000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 1.9793724764e17,
+    "time": 7.205914042000018,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5a60>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a54c0>"
+              }
+            },
+            "amount_in": 83204585299722,
+            "amount_out": 83174163207535,
+            "block_number": 19090000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5ee0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a50d0>"
+              }
+            },
+            "amount_in": 83174163207535,
+            "amount_out": 83382335812422,
+            "block_number": 19090000
+          }
+        ],
+        "block_number": 19090000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 83204585299722,
+        "amount_out": 83382335812422,
+        "return_precost": 0.0021363066958353105
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a58b0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a55e0>"
+              }
+            },
+            "amount_in": 89242983502197,
+            "amount_out": 54414291375,
+            "block_number": 19090000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5ee0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a50d0>"
+              }
+            },
+            "amount_in": 54414291375,
+            "amount_out": 120857566038957,
+            "block_number": 19090000
+          }
+        ],
+        "block_number": 19090000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 89242983502197,
+        "amount_out": 120857566038957,
+        "return_precost": 0.3542528644392722
+      }
+    ]
+  },
+  {
+    "block_number": 19100000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 1.3263982407e17,
+    "time": 6.337820707999981,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a53a0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5dc0>"
+              }
+            },
+            "amount_in": 55570527052246,
+            "amount_out": 55550533133705,
+            "block_number": 19100000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5430>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b4c0>"
+              }
+            },
+            "amount_in": 55550533133705,
+            "amount_out": 55689567887483,
+            "block_number": 19100000
+          }
+        ],
+        "block_number": 19100000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 55570527052246,
+        "amount_out": 55689567887483,
+        "return_precost": 0.002142157750727902
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5670>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5b80>"
+              }
+            },
+            "amount_in": 58454666596395,
+            "amount_out": 35641678289,
+            "block_number": 19100000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7414a5430>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b4c0>"
+              }
+            },
+            "amount_in": 35641678289,
+            "amount_out": 80974965554849,
+            "block_number": 19100000
+          }
+        ],
+        "block_number": 19100000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 58454666596395,
+        "amount_out": 80974965554849,
+        "return_precost": 0.3852609255980748
+      }
+    ]
+  },
+  {
+    "block_number": 19110000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 8.174718115e16,
+    "time": 5.53373775,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b8b0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b3a0>"
+              }
+            },
+            "amount_in": 36012251237035,
+            "amount_out": 21957328054,
+            "block_number": 19110000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b160>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147bca0>"
+              }
+            },
+            "amount_in": 21957328054,
+            "amount_out": 49786273662891,
+            "block_number": 19110000
+          }
+        ],
+        "block_number": 19110000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 36012251237035,
+        "amount_out": 49786273662891,
+        "return_precost": 0.3824815709296949
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b790>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b5e0>"
+              }
+            },
+            "amount_in": 33907256078111,
+            "amount_out": 33895211605054,
+            "block_number": 19110000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b160>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147bca0>"
+              }
+            },
+            "amount_in": 33895211605054,
+            "amount_out": 33980046298283,
+            "block_number": 19110000
+          }
+        ],
+        "block_number": 19110000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 33907256078111,
+        "amount_out": 33980046298283,
+        "return_precost": 0.0021467446379122013
+      }
+    ]
+  },
+  {
+    "block_number": 19120000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 3.9410284531e17,
+    "time": 6.998856541000009,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b040>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147baf0>"
+              }
+            },
+            "amount_in": 170564868019760,
+            "amount_out": 103996454871,
+            "block_number": 19120000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147bb80>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b940>"
+              }
+            },
+            "amount_in": 103996454871,
+            "amount_out": 240039472536988,
+            "block_number": 19120000
+          }
+        ],
+        "block_number": 19120000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 170564868019760,
+        "amount_out": 240039472536988,
+        "return_precost": 0.40732071805771475
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b550>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b700>"
+              }
+            },
+            "amount_in": 167051989615229,
+            "amount_out": 166987952159327,
+            "block_number": 19120000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147bb80>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b940>"
+              }
+            },
+            "amount_in": 166987952159327,
+            "amount_out": 167405898244729,
+            "block_number": 19120000
+          }
+        ],
+        "block_number": 19120000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 167051989615229,
+        "amount_out": 167405898244729,
+        "return_precost": 0.0021185538125894077
+      }
+    ]
+  },
+  {
+    "block_number": 19130000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.8408797134e17,
+    "time": 5.979205666999974,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147be50>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147bee0>"
+              }
+            },
+            "amount_in": 124400520566871,
+            "amount_out": 75849265646,
+            "block_number": 19130000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545f70>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545280>"
+              }
+            },
+            "amount_in": 75849265646,
+            "amount_out": 173292651370388,
+            "block_number": 19130000
+          }
+        ],
+        "block_number": 19130000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 124400520566871,
+        "amount_out": 173292651370388,
+        "return_precost": 0.39302191486598503
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b280>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147ba60>"
+              }
+            },
+            "amount_in": 120547629832185,
+            "amount_out": 120502603256912,
+            "block_number": 19130000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545f70>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545280>"
+              }
+            },
+            "amount_in": 120502603256912,
+            "amount_out": 120804203411401,
+            "block_number": 19130000
+          }
+        ],
+        "block_number": 19130000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 120547629832185,
+        "amount_out": 120804203411401,
+        "return_precost": 0.002128400032196165
+      }
+    ]
+  },
+  {
+    "block_number": 19140000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.3316234133e17,
+    "time": 6.058879332999936,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545e50>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7415450d0>"
+              }
+            },
+            "amount_in": 95554580196994,
+            "amount_out": 95519393336863,
+            "block_number": 19140000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545ca0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545c10>"
+              }
+            },
+            "amount_in": 95519393336863,
+            "amount_out": 95758464222237,
+            "block_number": 19140000
+          }
+        ],
+        "block_number": 19140000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 95554580196994,
+        "amount_out": 95758464222237,
+        "return_precost": 0.002133691810718874
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545160>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545a60>"
+              }
+            },
+            "amount_in": 100916227377080,
+            "amount_out": 61530470485,
+            "block_number": 19140000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545ca0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545c10>"
+              }
+            },
+            "amount_in": 61530470485,
+            "amount_out": 141873203366571,
+            "block_number": 19140000
+          }
+        ],
+        "block_number": 19140000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 100916227377080,
+        "amount_out": 141873203366571,
+        "return_precost": 0.405851239726319
+      }
+    ]
+  },
+  {
+    "block_number": 19150000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 1.4077221082e17,
+    "time": 5.099834084000008,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b430>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147bf70>"
+              }
+            },
+            "amount_in": 58173609877197,
+            "amount_out": 58152647403249,
+            "block_number": 19150000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7415459d0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545af0>"
+              }
+            },
+            "amount_in": 58152647403249,
+            "amount_out": 58298194863362,
+            "block_number": 19150000
+          }
+        ],
+        "block_number": 19150000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 58173609877197,
+        "amount_out": 58298194863362,
+        "return_precost": 0.002141606588073053
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb74147b0d0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545dc0>"
+              }
+            },
+            "amount_in": 61024810837504,
+            "amount_out": 37207950630,
+            "block_number": 19150000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7415459d0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545af0>"
+              }
+            },
+            "amount_in": 37207950630,
+            "amount_out": 85588912319089,
+            "block_number": 19150000
+          }
+        ],
+        "block_number": 19150000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 61024810837504,
+        "amount_out": 85588912319089,
+        "return_precost": 0.40252646660378755
+      }
+    ]
+  },
+  {
+    "block_number": 19160000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 1.1644278631e17,
+    "time": 5.667087250000009,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545b80>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545ee0>"
+              }
+            },
+            "amount_in": 48166023310487,
+            "amount_out": 48148768810303,
+            "block_number": 19160000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545700>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7415453a0>"
+              }
+            },
+            "amount_in": 48148768810303,
+            "amount_out": 48269278044989,
+            "block_number": 19160000
+          }
+        ],
+        "block_number": 19160000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 48166023310487,
+        "amount_out": 48269278044989,
+        "return_precost": 0.002143725543551689
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545550>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545430>"
+              }
+            },
+            "amount_in": 50892322882332,
+            "amount_out": 31029987621,
+            "block_number": 19160000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545700>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7415453a0>"
+              }
+            },
+            "amount_in": 31029987621,
+            "amount_out": 71022339885715,
+            "block_number": 19160000
+          }
+        ],
+        "block_number": 19160000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 50892322882332,
+        "amount_out": 71022339885715,
+        "return_precost": 0.39554132850107004
+      }
+    ]
+  },
+  {
+    "block_number": 19170000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 8.5698920938e17,
+    "time": 6.112877375000039,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545d30>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545310>"
+              }
+            },
+            "amount_in": 366860483882362,
+            "amount_out": 223681278529,
+            "block_number": 19170000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545820>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545670>"
+              }
+            },
+            "amount_in": 223681278529,
+            "amount_out": 522077231593260,
+            "block_number": 19170000
+          }
+        ],
+        "block_number": 19170000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 366860483882362,
+        "amount_out": 522077231593260,
+        "return_precost": 0.42309475817152875
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545820>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb741545670>"
+              }
+            },
+            "amount_in": 353375435719472,
+            "amount_out": 353226068321233,
+            "block_number": 19170000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7415454c0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692310>"
+              }
+            },
+            "amount_in": 353226068321233,
+            "amount_out": 354110140738093,
+            "block_number": 19170000
+          }
+        ],
+        "block_number": 19170000,
+        "expected_gas": 0,
+        "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+        "amount_in": 353375435719472,
+        "amount_out": 354110140738093,
+        "return_precost": 0.0020791060847937803
+      }
+    ]
+  },
+  {
+    "block_number": 19180000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 5.3025756542e17,
+    "time": 5.2363766659999555,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692430>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526928b0>"
+              }
+            },
+            "amount_in": 217964831012521,
+            "amount_out": 132897074951,
+            "block_number": 19180000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526929d0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692b80>"
+              }
+            },
+            "amount_in": 132897074951,
+            "amount_out": 323255938277088,
+            "block_number": 19180000
+          }
+        ],
+        "block_number": 19180000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 217964831012521,
+        "amount_out": 323255938277088,
+        "return_precost": 0.48306466128252845
+      }
+    ]
+  },
+  {
+    "block_number": 19190000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 4.4914772187e17,
+    "time": 6.141962416999945,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692dc0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526925e0>"
+              }
+            },
+            "amount_in": 182391214632447,
+            "amount_out": 111207219743,
+            "block_number": 19190000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692ee0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692160>"
+              }
+            },
+            "amount_in": 111207219743,
+            "amount_out": 273774349643865,
+            "block_number": 19190000
+          }
+        ],
+        "block_number": 19190000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 182391214632447,
+        "amount_out": 273774349643865,
+        "return_precost": 0.5010281618858254
+      }
+    ]
+  },
+  {
+    "block_number": 19200000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 3.4229397192e17,
+    "time": 5.055799125000021,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692280>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692550>"
+              }
+            },
+            "amount_in": 137636853701809,
+            "amount_out": 83919694231,
+            "block_number": 19200000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692790>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692670>"
+              }
+            },
+            "amount_in": 83919694231,
+            "amount_out": 209262942804067,
+            "block_number": 19200000
+          }
+        ],
+        "block_number": 19200000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 137636853701809,
+        "amount_out": 209262942804067,
+        "return_precost": 0.5203990586520986
+      }
+    ]
+  },
+  {
+    "block_number": 19210000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.2091222855e17,
+    "time": 6.758803124999986,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692820>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692f70>"
+              }
+            },
+            "amount_in": 88268082766873,
+            "amount_out": 53818668157,
+            "block_number": 19210000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526921f0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526923a0>"
+              }
+            },
+            "amount_in": 53818668157,
+            "amount_out": 134198790245363,
+            "block_number": 19210000
+          }
+        ],
+        "block_number": 19210000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 88268082766873,
+        "amount_out": 134198790245363,
+        "return_precost": 0.5203546518598203
+      }
+    ]
+  },
+  {
+    "block_number": 19220000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 3.6038720777e17,
+    "time": 6.63856870799998,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627dc0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526274c0>"
+              }
+            },
+            "amount_in": 360387207769999936,
+            "amount_out": 949680691437939713249,
+            "block_number": 19220000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692d30>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692c10>"
+              }
+            },
+            "amount_in": 949680691437939713249,
+            "amount_out": 360492832578365510,
+            "block_number": 19220000
+          }
+        ],
+        "block_number": 19220000,
+        "expected_gas": 0,
+        "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "amount_in": 360387207769999936,
+        "amount_out": 360492832578365510,
+        "return_precost": 0.0002930870077746395
+      }
+    ]
+  },
+  {
+    "block_number": 19230000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.325940812e17,
+    "time": 5.6412390829999595,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627a60>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627f70>"
+              }
+            },
+            "amount_in": 82874265870875,
+            "amount_out": 29828796732,
+            "block_number": 19230000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627550>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526273a0>"
+              }
+            },
+            "amount_in": 29828796732,
+            "amount_out": 83646348121185,
+            "block_number": 19230000
+          }
+        ],
+        "block_number": 19230000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 82874265870875,
+        "amount_out": 83646348121185,
+        "return_precost": 0.009316308774462767
+      }
+    ]
+  },
+  {
+    "block_number": 19240000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.2226789306e17,
+    "time": 5.069275667000056,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627ee0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627160>"
+              }
+            },
+            "amount_in": 78874342582268,
+            "amount_out": 79052607938945,
+            "block_number": 19240000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752692700>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627280>"
+              }
+            },
+            "amount_in": 79052607938945,
+            "amount_out": 79023773256216,
+            "block_number": 19240000
+          }
+        ],
+        "block_number": 19240000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 78874342582268,
+        "amount_out": 79023773256216,
+        "return_precost": 0.0018945409756301324
+      }
+    ]
+  },
+  {
+    "block_number": 19250000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 3.2531929786e17,
+    "time": 6.099271041999941,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627820>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526275e0>"
+              }
+            },
+            "amount_in": 117328471458379,
+            "amount_out": 117593647696808,
+            "block_number": 19250000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627e50>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627d30>"
+              }
+            },
+            "amount_in": 117593647696808,
+            "amount_out": 117549797848016,
+            "block_number": 19250000
+          }
+        ],
+        "block_number": 19250000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 117328471458379,
+        "amount_out": 117549797848016,
+        "return_precost": 0.0018863826221029445
+      }
+    ]
+  },
+  {
+    "block_number": 19260000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.4051966078e17,
+    "time": 5.978645540999992,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627ca0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6040>"
+              }
+            },
+            "amount_in": 240519660779999968,
+            "amount_out": 208106365334355061,
+            "block_number": 19260000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627af0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627040>"
+              }
+            },
+            "amount_in": 208106365334355061,
+            "amount_out": 240812927435632755,
+            "block_number": 19260000
+          }
+        ],
+        "block_number": 19260000,
+        "expected_gas": 0,
+        "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "amount_in": 240519660779999968,
+        "amount_out": 240812927435632755,
+        "return_precost": 0.0012193042958805744
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627ca0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6040>"
+              }
+            },
+            "amount_in": 82299958619114,
+            "amount_out": 82427005299800,
+            "block_number": 19260000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627310>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627700>"
+              }
+            },
+            "amount_in": 82427005299800,
+            "amount_out": 82396881050928,
+            "block_number": 19260000
+          }
+        ],
+        "block_number": 19260000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 82299958619114,
+        "amount_out": 82396881050928,
+        "return_precost": 0.0011776729106578454
+      }
+    ]
+  },
+  {
+    "block_number": 19270000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 4.2978805635e17,
+    "time": 6.318560250000019,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6d30>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6550>"
+              }
+            },
+            "amount_in": 147008310632799,
+            "amount_out": 147235247771880,
+            "block_number": 19270000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb752627b80>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a69d0>"
+              }
+            },
+            "amount_in": 147235247771880,
+            "amount_out": 147179423047401,
+            "block_number": 19270000
+          }
+        ],
+        "block_number": 19270000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 147008310632799,
+        "amount_out": 147179423047401,
+        "return_precost": 0.001163964226685188
+      }
+    ]
+  },
+  {
+    "block_number": 19280000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 3.2328812863e17,
+    "time": 6.2111951250000175,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6b80>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6c10>"
+              }
+            },
+            "amount_in": 110696893742063,
+            "amount_out": 110867776849447,
+            "block_number": 19280000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6e50>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6280>"
+              }
+            },
+            "amount_in": 110867776849447,
+            "amount_out": 110826592518917,
+            "block_number": 19280000
+          }
+        ],
+        "block_number": 19280000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 110696893742063,
+        "amount_out": 110826592518917,
+        "return_precost": 0.001171656877348548
+      }
+    ]
+  },
+  {
+    "block_number": 19290000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 3.41828184e17,
+    "time": 6.248308041999962,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6700>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a63a0>"
+              }
+            },
+            "amount_in": 116447732855469,
+            "amount_out": 116627493548792,
+            "block_number": 19290000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a65e0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a61f0>"
+              }
+            },
+            "amount_in": 116627493548792,
+            "amount_out": 116584027770133,
+            "block_number": 19290000
+          }
+        ],
+        "block_number": 19290000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 116447732855469,
+        "amount_out": 116584027770133,
+        "return_precost": 0.0011704385420123753
+      }
+    ]
+  },
+  {
+    "block_number": 19300000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 3.1725726499e17,
+    "time": 5.174282875000017,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa5e0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa550>"
+              }
+            },
+            "amount_in": 106133725603736,
+            "amount_out": 35583219318,
+            "block_number": 19300000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6430>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6160>"
+              }
+            },
+            "amount_in": 35583219318,
+            "amount_out": 106347403676571,
+            "block_number": 19300000
+          }
+        ],
+        "block_number": 19300000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 106133725603736,
+        "amount_out": 106347403676571,
+        "return_precost": 0.0020132909837990987
+      }
+    ]
+  },
+  {
+    "block_number": 19310000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 2.4119940913e17,
+    "time": 6.133619833000012,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002faaf0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa160>"
+              }
+            },
+            "amount_in": 77851111853952,
+            "amount_out": 25160952619,
+            "block_number": 19310000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa9d0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa700>"
+              }
+            },
+            "amount_in": 25160952619,
+            "amount_out": 77990830664697,
+            "block_number": 19310000
+          }
+        ],
+        "block_number": 19310000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 77851111853952,
+        "amount_out": 77990830664697,
+        "return_precost": 0.0017946925537442038
+      }
+    ]
+  },
+  {
+    "block_number": 19320000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 7.5115272747e17,
+    "time": 5.183599875000027,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa430>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fab80>"
+              }
+            },
+            "amount_in": 232943233945943,
+            "amount_out": 233414943129195,
+            "block_number": 19320000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6f70>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6820>"
+              }
+            },
+            "amount_in": 233414943129195,
+            "amount_out": 233322194809234,
+            "block_number": 19320000
+          }
+        ],
+        "block_number": 19320000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 232943233945943,
+        "amount_out": 233322194809234,
+        "return_precost": 0.0016268378216941493
+      }
+    ]
+  },
+  {
+    "block_number": 19330000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 4.5063847216e17,
+    "time": 5.198611958000015,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fac10>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa0d0>"
+              }
+            },
+            "amount_in": 131432922401958,
+            "amount_out": 38526399073,
+            "block_number": 19330000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa670>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fae50>"
+              }
+            },
+            "amount_in": 38526399073,
+            "amount_out": 131782907891679,
+            "block_number": 19330000
+          }
+        ],
+        "block_number": 19330000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 131432922401958,
+        "amount_out": 131782907891679,
+        "return_precost": 0.00266284491986446
+      }
+    ]
+  },
+  {
+    "block_number": 19340000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 4.3880667168e17,
+    "time": 6.122483249999959,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002faa60>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002faca0>"
+              }
+            },
+            "amount_in": 128595937710225,
+            "amount_out": 128917660359682,
+            "block_number": 19340000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa040>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002faee0>"
+              }
+            },
+            "amount_in": 128917660359682,
+            "amount_out": 128869279543503,
+            "block_number": 19340000
+          }
+        ],
+        "block_number": 19340000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 128595937710225,
+        "amount_out": 128869279543503,
+        "return_precost": 0.0021255868431391267
+      }
+    ]
+  },
+  {
+    "block_number": 19350000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 4.2737479708e17,
+    "time": 6.6288198749999765,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa3a0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa280>"
+              }
+            },
+            "amount_in": 427374797079999936,
+            "amount_out": 369277203995926513,
+            "block_number": 19350000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa940>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa790>"
+              }
+            },
+            "amount_in": 369277203995926513,
+            "amount_out": 427843294580699318,
+            "block_number": 19350000
+          }
+        ],
+        "block_number": 19350000,
+        "expected_gas": 0,
+        "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+        "amount_in": 427374797079999936,
+        "amount_out": 427843294580699318,
+        "return_precost": 0.0010962216394143631
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa3a0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa280>"
+              }
+            },
+            "amount_in": 125145939114849,
+            "amount_out": 125459030522482,
+            "block_number": 19350000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6ee0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526a6a60>"
+              }
+            },
+            "amount_in": 125459030522482,
+            "amount_out": 125412039319516,
+            "block_number": 19350000
+          }
+        ],
+        "block_number": 19350000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 125145939114849,
+        "amount_out": 125412039319516,
+        "return_precost": 0.002126319132279564
+      }
+    ]
+  },
+  {
+    "block_number": 19360000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 5.7947632548e17,
+    "time": 6.143768625000007,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7670>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7b80>"
+              }
+            },
+            "amount_in": 166858507318473,
+            "amount_out": 167275955654974,
+            "block_number": 19360000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fad30>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7002fa310>"
+              }
+            },
+            "amount_in": 167275955654974,
+            "amount_out": 167211824432025,
+            "block_number": 19360000
+          }
+        ],
+        "block_number": 19360000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 166858507318473,
+        "amount_out": 167211824432025,
+        "return_precost": 0.002117465385673478
+      }
+    ]
+  },
+  {
+    "block_number": 19370000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 1.00649816283e18,
+    "time": 6.101390250000009,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7790>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7430>"
+              }
+            },
+            "amount_in": 264456715142358,
+            "amount_out": 72043172938,
+            "block_number": 19370000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f78b0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7a60>"
+              }
+            },
+            "amount_in": 72043172938,
+            "amount_out": 273612372419370,
+            "block_number": 19370000
+          }
+        ],
+        "block_number": 19370000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 264456715142358,
+        "amount_out": 273612372419370,
+        "return_precost": 0.03462062694109869
+      }
+    ]
+  },
+  {
+    "block_number": 19380000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 6.6376337407e17,
+    "time": 4.715160000000083,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7700>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7040>"
+              }
+            },
+            "amount_in": 174172616222335,
+            "amount_out": 174539617632989,
+            "block_number": 19380000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7526279d0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7c10>"
+              }
+            },
+            "amount_in": 174539617632989,
+            "amount_out": 174472433873132,
+            "block_number": 19380000
+          }
+        ],
+        "block_number": 19380000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 174172616222335,
+        "amount_out": 174472433873132,
+        "return_precost": 0.0017213822545691926
+      }
+    ]
+  },
+  {
+    "block_number": 19390000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 4.5943870048e17,
+    "time": 6.854624416999968,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f70d0>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7940>"
+              }
+            },
+            "amount_in": 116774417105223,
+            "amount_out": 117055433878244,
+            "block_number": 19390000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f74c0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f79d0>"
+              }
+            },
+            "amount_in": 117055433878244,
+            "amount_out": 117011798031379,
+            "block_number": 19390000
+          }
+        ],
+        "block_number": 19390000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 116774417105223,
+        "amount_out": 117011798031379,
+        "return_precost": 0.0020328161941678413
+      },
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7280>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7820>"
+              }
+            },
+            "amount_in": 116774417105223,
+            "amount_out": 30572365592,
+            "block_number": 19390000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f74c0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f79d0>"
+              }
+            },
+            "amount_in": 30572365592,
+            "amount_out": 120819644457952,
+            "block_number": 19390000
+          }
+        ],
+        "block_number": 19390000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 116774417105223,
+        "amount_out": 120819644457952,
+        "return_precost": 0.03464138338694456
+      }
+    ]
+  },
+  {
+    "block_number": 19400000,
+    "num_of_tokens": 7,
+    "tokens": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "0x956F47F50A910163D8BF957Cf5846D573E7f87CA"
+    ],
+    "u_eth": 5.3497866026e17,
+    "time": 6.353013583000006,
+    "arbitrages": [
+      {
+        "path": [
+          {
+            "exchange_edge": {
+              "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "token_out": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "exchange_function": {
+                "quote_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb700306430>",
+                "swap_function": "<function UniswapV3Service.get_exchange_functions.<locals>.<lambda> at 0x7fb700306a60>"
+              }
+            },
+            "amount_in": 137118258160382,
+            "amount_out": 137448232234120,
+            "block_number": 19400000
+          },
+          {
+            "exchange_edge": {
+              "token_in": "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
+              "token_out": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+              "exchange_function": {
+                "quote_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f73a0>",
+                "swap_function": "<function UniswapV2Service.get_exchange_functions.<locals>.<lambda> at 0x7fb7413f7ee0>"
+              }
+            },
+            "amount_in": 137448232234120,
+            "amount_out": 137396402392971,
+            "block_number": 19400000
+          }
+        ],
+        "block_number": 19400000,
+        "expected_gas": 0,
+        "token_in": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "amount_in": 137118258160382,
+        "amount_out": 137396402392971,
+        "return_precost": 0.0020284988762304668
+      }
+    ]
+  }
+]
