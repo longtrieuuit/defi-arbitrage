@@ -11,7 +11,7 @@ from eth_account.signers.local import LocalAccount
 from eth_typing.evm import ChecksumAddress, BlockIdentifier, BlockNumber
 
 from hexbytes import HexBytes
-from typing import List, Dict, Generator
+from typing import List, Generator
 
 class UniswapArbitrageService():
     def __init__(self, w3: Web3, executor_private_key: HexBytes) -> None:
@@ -35,8 +35,8 @@ class UniswapArbitrageService():
         )
 
     def find_arbitrages(
-        self, tokens: List[ChecksumAddress], max_hops: int = 3,
-        block_identifier: BlockIdentifier = "latest"
+        self, tokens: List[ChecksumAddress], u_eth: float,
+        max_hops: int = 3, block_identifier: BlockIdentifier = "latest"
     ) -> Generator[Arbitrage, None, None]:
         block_number: BlockNumber = block_identifier_to_number(
             w3 = self.w3,
@@ -53,6 +53,7 @@ class UniswapArbitrageService():
                 tokens = tokens,
                 exchange_functions = exchange_functions
             ),
+            u_eth = u_eth,
             max_hops = max_hops,
             block_identifier = block_identifier
         )
